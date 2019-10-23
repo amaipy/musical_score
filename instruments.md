@@ -1,6 +1,5 @@
-roses - spring like sound synt
+flowers - spring like sound synt
 stars - guitar 
 moon - piano
-sunflowers - drum
 cloud - bass
 leaf - flute 
