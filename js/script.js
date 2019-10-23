@@ -3,6 +3,8 @@ let SELECTED_BUTTON = '';
 let size = 40;
 let CURRENT_ELEMENT = null;
 let ELEMENTS = [];
+let CURRENT_INDEX = 0;
+let BACKGROUND_COLOR = '#000000';
 
 const selectButton = (id) => {
     if (document.getElementById(id).className.indexOf('btnsSelected') != -1) {
@@ -10,14 +12,15 @@ const selectButton = (id) => {
         SELECTED_BUTTON = '';
     }
     else {
-        if (document.getElementsByClassName('btnsSelected').length == 0) {
-            document.getElementById(id).className = document.getElementById(id).className + ' btnsSelected';
-            SELECTED_BUTTON = id;
+        let selectedButton = document.getElementsByClassName('btnsSelected');
+        if (selectedButton.length > 0) {
+            selectedButton[0].className = document.getElementById(id).className.replace('btnsSelected', '');
         }
+        document.getElementById(id).className = document.getElementById(id).className + ' btnsSelected';
+        SELECTED_BUTTON = id;
     }
 
 };
-
 
 const s = (sketch) => {
 
@@ -35,11 +38,11 @@ const s = (sketch) => {
 
     sketch.setup = () => {
         sketch.createCanvas(1000, 1000);
-        sketch.background("#000000");
+        sketch.background(BACKGROUND_COLOR);
     };
 
     sketch.draw = () => {
-        sketch.background("#000000");
+        sketch.background(BACKGROUND_COLOR);
         if (sketch.mouseIsPressed) {
             size += 1;
             if (SELECTED_BUTTON != '' && sketch.pmouseX > 0 && sketch.pmouseY > 0) {
@@ -59,9 +62,13 @@ const s = (sketch) => {
                 }
             }
         }
-        ELEMENTS.forEach(element => {
-            element.display(sketch);
-        });
+
+        if (ELEMENTS.length > 0) {
+            ELEMENTS[CURRENT_INDEX].display(sketch);
+            CURRENT_INDEX++;
+            if (CURRENT_INDEX >= ELEMENTS.length) CURRENT_INDEX = 0;
+        }
+
     };
 
 };
