@@ -5,6 +5,8 @@ let CURRENT_ELEMENT = null;
 let ELEMENTS = [];
 let CURRENT_INDEX = 0;
 let BACKGROUND_COLOR = '#000000';
+let DEFAULT_TIMER = 50;
+let CURRENT_TIMER = DEFAULT_TIMER;
 
 const selectButton = (id) => {
     if (document.getElementById(id).className.indexOf('btnsSelected') != -1) {
@@ -19,7 +21,6 @@ const selectButton = (id) => {
         document.getElementById(id).className = document.getElementById(id).className + ' btnsSelected';
         SELECTED_BUTTON = id;
     }
-
 };
 
 const s = (sketch) => {
@@ -30,6 +31,7 @@ const s = (sketch) => {
 
     sketch.mouseReleased = () => {
         if (CURRENT_ELEMENT) {
+            CURRENT_ELEMENT.hide(sketch);
             ELEMENTS.push(CURRENT_ELEMENT);
         }
         CURRENT_ELEMENT = null;
@@ -42,11 +44,12 @@ const s = (sketch) => {
     };
 
     sketch.draw = () => {
-        sketch.background(BACKGROUND_COLOR);
+        //sketch.background(BACKGROUND_COLOR);
         if (sketch.mouseIsPressed) {
             size += 1;
             if (SELECTED_BUTTON != '' && sketch.pmouseX > 0 && sketch.pmouseY > 0) {
                 if (CURRENT_ELEMENT) {
+                    CURRENT_ELEMENT.hide(sketch);
                     CURRENT_ELEMENT.changeSize(size);
                     CURRENT_ELEMENT.display(sketch);
                 }
@@ -62,13 +65,19 @@ const s = (sketch) => {
                 }
             }
         }
-
-        if (ELEMENTS.length > 0) {
+        if (frameCount % 60 == 0 && ELEMENTS.length > 0 && CURRENT_TIMER > 0) {
+            CURRENT_TIMER --;
+        }
+        if (CURRENT_TIMER == 0 && ELEMENTS.length > 0) { 
+            if (CURRENT_INDEX > 0) {
+                ELEMENTS[CURRENT_INDEX-1].hide(sketch);    
+            }
+            if (CURRENT_INDEX == ELEMENTS.length) CURRENT_INDEX = 0;
             ELEMENTS[CURRENT_INDEX].display(sketch);
             CURRENT_INDEX++;
-            if (CURRENT_INDEX >= ELEMENTS.length) CURRENT_INDEX = 0;
+            CURRENT_TIMER = DEFAULT_TIMER;
         }
-
+        
     };
 
 };
