@@ -1,11 +1,11 @@
 let SELECTED_COLOR_SWATCH = returnRandom(GLOBAL_SWATCHES);
 let SELECTED_BUTTON = '';
-let size = 40;
+
+let size = RESETED_SIZE;
 let CURRENT_ELEMENT = null;
 let ELEMENTS = [];
 let CURRENT_INDEX = 0;
-let BACKGROUND_COLOR = '#000000';
-let DEFAULT_TIMER = 50;
+
 let CURRENT_TIMER = DEFAULT_TIMER;
 
 const selectButton = (id) => {
@@ -25,13 +25,16 @@ const selectButton = (id) => {
 
 const s = (sketch) => {
 
+    sketch.masterVolume(0.8); 
+
     sketch.mousePressed = () => {
-        size = 20;
+        size = RESETED_SIZE;
     };
 
     sketch.mouseReleased = () => {
         if (CURRENT_ELEMENT) {
             CURRENT_ELEMENT.hide(sketch);
+            CURRENT_ELEMENT.playable = true;
             ELEMENTS.push(CURRENT_ELEMENT);
         }
         CURRENT_ELEMENT = null;

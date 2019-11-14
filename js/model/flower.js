@@ -11,9 +11,11 @@ class flower extends shape {
         this.lens = returnRandomInt(1, 6);
         this.rate = returnRandomInt(7, 8);
         this.ratio = this.rate/this.lens;
-        this.firstNote = this.lens * returnRandom(1, 3);
+        this.firstNote = this.lens * returnRandomInt(1, 3);
         this.scale = this.rate == 7 ? MAJOR_SCALE : MINOR_SCALE; 
         this.chord = returnScale(this.firstNote, this.scale[0], this.scale[1]); 
+        this.noteRange = returnRange(this.pos.y);
+        this.playable = false;
     }
 
     hide (sketch) {
@@ -33,8 +35,8 @@ class flower extends shape {
             sketch.vertex(this.pos.x+x, this.pos.y+y);
         }
         sketch.endShape();
-        if (playNote) {
-
+        if (playNote && this.playable) {
+            console.log(this.chord[this.noteRange]);
         }
     }
 
