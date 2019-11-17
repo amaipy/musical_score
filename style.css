@@ -44,3 +44,19 @@ body {
 .btnsSelected {
     box-shadow: none !important;
 }
+
+button {
+    outline: none;
+    border: 0px solid;
+    background: transparent;
+ }
+ 
+ .music-button {
+    fill: #fff;
+    opacity: 0.85;
+ }
+ 
+ .music-button:hover {
+    cursor: pointer;
+    opacity: 1;
+ }

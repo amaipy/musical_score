@@ -24,7 +24,39 @@
             <a id='moon-button' onclick='selectButton(this.id);'></a>
             <a id='cloud-button' onclick='selectButton(this.id);'></a>
             <a id='leaf-button' onclick='selectButton(this.id);'></a>
+
+            <button id='back' class='music-button' onclick='lossSpeed();'>
+                <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 17L30 2.27757V31.7224L15 17Z" fill="white" />
+                    <path d="M0 17L15 2.27757L15 31.7224L0 17Z" fill="white" />
+                </svg>
+            </button>
+            <button class="music-button" aria-live="assertive" tabindex="32" aria-label="Pause"
+                onclick='changePausePlay();'>
+                <svg height="50" width="50" viewBox="0 0 1200 1200" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                        <path id="ytp-12"
+                            d="M 600,1200 C 268.65,1200 0,931.35 0,600 0,268.65 268.65,0 600,0 c 331.35,0 600,268.65 600,600 0,331.35 -268.65,600 -600,600 z M 450,300.45 450,899.55 900,600 450,300.45 z">
+                            <animate id="animation" begin="indefinite" attributeType="XML" attributeName="d"
+                                fill="freeze"
+                                from="M 600,1200 C 268.65,1200 0,931.35 0,600 0,268.65 268.65,0 600,0 c 331.35,0 600,268.65 600,600 0,331.35 -268.65,600 -600,600 z M 450,300.45 450,899.55 900,600 450,300.45 z"
+                                to="M 600,0 C 268.62914,0 0,268.62914 0,600 c 0,331.37086 268.62914,600 600,600 331.37086,0 600,-268.62914 600,-600 C 1200,268.62914 931.37086,0 600,0 z m -269.16515,289.38 181.71397,0 0,621.24 -181.71397,0 0,-621.24 z m 356.61633,0 181.71399,0 0,621.24 -181.71399,0 0,-621.24 z"
+                                dur="0.1s" keySplines=".4 0 1 1" repeatCount="1"></animate>
+                        </path>
+                    </defs>
+                    <use xlink:href="#ytp-12"></use>
+                </svg>
+            </button>
+            <button id='foward' class='music-button' onclick='gainSpeed();'>
+                <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 17L5 31.7224L5 2.27757L20 17Z" fill="white" />
+                    <path d="M35 17L20 31.7224V2.27757L35 17Z" fill="white" />
+                </svg>
+            </button>
         </div>
+
+
     </div>
     <div id='canvas '>
     </div>

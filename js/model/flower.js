@@ -7,7 +7,7 @@ class flower extends shape {
     }
 
     initialize (point) {
-        super.initialize(point)
+        super.initialize(point);
         this.lens = returnRandomInt(1, 6);
         this.rate = returnRandomInt(7, 8);
         this.ratio = this.rate/this.lens;
@@ -35,8 +35,9 @@ class flower extends shape {
             sketch.vertex(this.pos.x+x, this.pos.y+y);
         }
         sketch.endShape();
-        if (playNote && this.playable) {
+        if (playNote && this.playable && PLAY_MUSIC) {
             console.log(this.chord[this.noteRange]);
+            playSoundFromNote(this.constructor.name, this.chord[this.noteRange]);
         }
     }
 

@@ -6,9 +6,9 @@ const MUSICAL_SCALE = [
     'Eb4', 
     'E4', 
     'F4', 
-    'F#4', 
+    'Fsharp4', 
     'G4', 
-    'G#4', 
+    'Gsharp4', 
     'A4', 
     'Bb4', 
     'B4',
@@ -74,13 +74,19 @@ const returnRange = (currentY) => {
 };
 
 const loadInstruments = () => {
-    for (let i = 0, curr = 0, aux = 0; i < TOTAL_SOUNDS; i++, aux++) {
-        if (aux % 18 == 0) {
+    for (let i = 0, curr = 0, aux = 0; curr < ALL_INSTRUMENTS.length; i++, aux++) {
+        if (aux % 18 == 0 && aux != 0) {
             curr++;
             aux = 0;
         }
+        if (curr == ALL_INSTRUMENTS.length) break;
         ALL_SOUNDS[curr][aux] = loadSound(FILE_PATH + ALL_INSTRUMENTS[curr] + '/' + (MUSICAL_SCALE[aux]) + FILE_EXT);
     }
 };
 
+const playSoundFromNote = (instrument, note) => {
+    ALL_SOUNDS[ALL_INSTRUMENTS.indexOf(instrument)][MUSICAL_SCALE.indexOf(note)].play();
+};
+
 loadInstruments();
+
