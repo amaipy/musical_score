@@ -67,9 +67,19 @@ body {
     filter: invert(62%) sepia(11%) saturate(695%) hue-rotate(172deg) brightness(87%) contrast(84%);
 }
 
-#stars-button {
-    background-color: yellow;
+
+#star-button {
+    background-image: url('assets/icon/star.svg');
 }
+
+.star {
+    filter: invert(77%) sepia(82%) saturate(348%) hue-rotate(4deg) brightness(92%) contrast(92%);
+}
+
+#star-button:hover, #star-button:focus {
+    filter: invert(77%) sepia(82%) saturate(348%) hue-rotate(4deg) brightness(92%) contrast(92%);
+}
+
 
 #moon-button {
     background-color: aliceblue;

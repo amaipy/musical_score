@@ -101,6 +101,11 @@ const s = (sketch) => {
                             CURRENT_ELEMENT.initialize(pos);
                             CURRENT_ELEMENT.display(sketch);
                             break;    
+                        case 'star-button':
+                            CURRENT_ELEMENT = new star(size);
+                            CURRENT_ELEMENT.initialize(pos);
+                            CURRENT_ELEMENT.display(sketch);
+                            break;  
                     }
                 }
             }
