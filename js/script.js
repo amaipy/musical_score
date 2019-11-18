@@ -6,6 +6,8 @@ let CURRENT_ELEMENT = null;
 let ELEMENTS = [];
 let CURRENT_INDEX = 0;
 
+let RESET_CANVA = false;
+
 let CURRENT_TIMER = DEFAULT_TIMER;
 
 let pause = "M 600,0 C 268.62914,0 0,268.62914 0,600 c 0,331.37086 268.62914,600 600,600 331.37086,0 600,-268.62914 600,-600 C 1200,268.62914 931.37086,0 600,0 z m -269.16515,289.38 181.71397,0 0,621.24 -181.71397,0 0,-621.24 z m 356.61633,0 181.71399,0 0,621.24 -181.71399,0 0,-621.24 z",
@@ -25,6 +27,10 @@ const gainSpeed = () => {
 
 const lossSpeed = () => {
     DEFAULT_TIMER += 1;
+};
+
+const resetAllCanva = () => {
+    RESET_CANVA = true;
 };
 
 const selectButton = (id) => {
@@ -62,11 +68,17 @@ const s = (sketch) => {
 
     sketch.setup = () => {
         sketch.createCanvas(1000, 1000);
+        
         sketch.background(BACKGROUND_COLOR);
     };
 
     sketch.draw = () => {
-        //sketch.background(BACKGROUND_COLOR);
+        if (RESET_CANVA) {
+            sketch.background(BACKGROUND_COLOR);
+            ELEMENTS = [];
+            CURRENT_INDEX = 0;
+            RESET_CANVA = !RESET_CANVA;    
+        }
         if (sketch.mouseIsPressed) {
             size += 1;
             if (SELECTED_BUTTON != '' && sketch.pmouseX > 0 && sketch.pmouseY > 0) {
