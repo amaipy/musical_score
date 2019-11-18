@@ -30,7 +30,7 @@ class cloud extends shape {
         let currColor = param ? color(param) : color(SELECTED_COLOR_SWATCH[this.color]);
         sketch.strokeWeight(1);
         for (let i = 0; i < this.balls; i++) {
-            currColor.setAlpha(returnRandomInt(50, 80))
+            currColor.setAlpha(returnRandomInt(1, 20))
             sketch.fill(currColor)
             sketch.stroke(currColor);
             sketch.ellipse(this.xOffset[i] + this.pos.x, this.yOffset[i] + this.pos.y, this.ballSize[i] + this.size, this.ballSize[i] + this.size)
