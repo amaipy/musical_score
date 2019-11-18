@@ -75,7 +75,7 @@ const returnRange = (currentY) => {
 
 const loadInstruments = () => {
     for (let i = 0, curr = 0, aux = 0; curr < ALL_INSTRUMENTS.length; i++, aux++) {
-        if (aux % 18 == 0 && aux != 0) {
+        if (aux % 19 == 0 && aux != 0) {
             curr++;
             aux = 0;
         }
