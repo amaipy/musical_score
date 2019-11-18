@@ -95,6 +95,11 @@ const s = (sketch) => {
                             CURRENT_ELEMENT.initialize(pos);
                             CURRENT_ELEMENT.display(sketch);
                             break;
+                        case 'cloud-button':
+                            CURRENT_ELEMENT = new cloud(size);
+                            CURRENT_ELEMENT.initialize(pos);
+                            CURRENT_ELEMENT.display(sketch);
+                            break;    
                     }
                 }
             }
