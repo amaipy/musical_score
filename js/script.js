@@ -36,14 +36,15 @@ const resetAllCanva = () => {
 const selectButton = (id) => {
     if (document.getElementById(id).className.indexOf('btnsSelected') != -1) {
         document.getElementById(id).className = document.getElementById(id).className.replace('btnsSelected', '');
+        document.getElementById(id).className = document.getElementById(id).className.replace(id.replace('-button', ''), '');
         SELECTED_BUTTON = '';
     }
     else {
         let selectedButton = document.getElementsByClassName('btnsSelected');
         if (selectedButton.length > 0) {
-            selectedButton[0].className = document.getElementById(id).className.replace('btnsSelected', '');
+            selectedButton[0].className = document.getElementById(id).className.replace('btnsSelected', '').replace(id.replace('-button', ''), '');
         }
-        document.getElementById(id).className = document.getElementById(id).className + ' btnsSelected';
+        document.getElementById(id).className = document.getElementById(id).className + ' btnsSelected' + ' ' + id.replace('-button', '');
         SELECTED_BUTTON = id;
     }
 };

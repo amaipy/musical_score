@@ -17,8 +17,54 @@ body {
     box-shadow: inset 0 0 0 99999px rgba(0, 0, 0, 0.8);
 }
 
+.icon-instrument {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+}
+
+.icon-music {
+    display: inline-block;
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+}
+
+#back-button {
+    background-image: url('assets/icon/back.svg');
+}
+
+#foward-button {
+    background-image: url('assets/icon/foward.svg');
+}
+
+#loop-button {
+    background-image: url('assets/icon/loop.svg');
+}
+
 #flower-button {
-    background-color: pink;
+    background-image: url('assets/icon/flower.svg');
+}
+
+.flower {
+    filter: invert(65%) sepia(48%) saturate(1028%) hue-rotate(303deg) brightness(91%) contrast(87%);
+}
+
+#flower-button:hover, #flower-button:focus {
+    filter: invert(65%) sepia(48%) saturate(1028%) hue-rotate(303deg) brightness(91%) contrast(87%);
+}
+
+#cloud-button {
+    background-image: url('assets/icon/cloud.svg');
+}
+
+.cloud {
+    filter: invert(62%) sepia(11%) saturate(695%) hue-rotate(172deg) brightness(87%) contrast(84%);
+}
+
+#cloud-button:hover, #cloud-button:focus {
+    filter: invert(62%) sepia(11%) saturate(695%) hue-rotate(172deg) brightness(87%) contrast(84%);
 }
 
 #stars-button {
@@ -33,10 +79,6 @@ body {
     background-color: orange;
 }
 
-#cloud-button {
-    background-color: grey;
-}
-
 #leaf-button {
     background-color: green;
 }
@@ -49,14 +91,14 @@ button {
     outline: none;
     border: 0px solid;
     background: transparent;
- }
- 
- .music-button {
+}
+
+.music-button {
     fill: #fff;
     opacity: 0.85;
- }
- 
- .music-button:hover {
+}
+
+.music-button:hover {
     cursor: pointer;
     opacity: 1;
- }
+}
