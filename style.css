@@ -82,7 +82,15 @@ body {
 
 
 #moon-button {
-    background-color: aliceblue;
+    background-image: url('assets/icon/moon.svg');
+}
+
+.moon {
+    filter: invert(83%) sepia(8%) saturate(4905%) hue-rotate(181deg) brightness(96%) contrast(95%);
+}
+
+#moon-button:hover, #moon-button:focus {
+    filter: invert(83%) sepia(8%) saturate(4905%) hue-rotate(181deg) brightness(96%) contrast(95%);
 }
 
 #sunflower-button {

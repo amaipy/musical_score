@@ -106,6 +106,11 @@ const s = (sketch) => {
                             CURRENT_ELEMENT.initialize(pos);
                             CURRENT_ELEMENT.display(sketch);
                             break;  
+                        case 'moon-button':
+                            CURRENT_ELEMENT = new moon(size);
+                            CURRENT_ELEMENT.initialize(pos);
+                            CURRENT_ELEMENT.display(sketch);
+                            break;      
                     }
                 }
             }
