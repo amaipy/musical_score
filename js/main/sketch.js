@@ -9,7 +9,7 @@ let CURRENT_TIMER = DEFAULT_TIMER;
 
 const s = (sketch) => {
 
-    sketch.masterVolume(0.8); 
+    sketch.masterVolume(MASTER_VOLUME); 
 
     sketch.mousePressed = () => {
         size = RESETED_SIZE;
@@ -34,7 +34,7 @@ const s = (sketch) => {
     };
 
     sketch.draw = () => {
-        
+
         if (RESET_CANVA) {
             sketch.background(BACKGROUND_COLOR);
             ELEMENTS = [];
@@ -68,9 +68,8 @@ const s = (sketch) => {
                             CURRENT_ELEMENT = new butterfly(size);  
                             break;
                     }
-                    let pos = createVector(sketch.mouseX, sketch.mouseY);
                     if (CURRENT_ELEMENT) {
-                        CURRENT_ELEMENT.initialize(pos);
+                        CURRENT_ELEMENT.initialize(createVector(sketch.mouseX, sketch.mouseY));
                         CURRENT_ELEMENT.display(sketch);         
                     }
                 }

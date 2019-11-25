@@ -1,24 +1,13 @@
 class star extends shape {
 
-    constructor(size) {
-        super(size);
-        this.lens = 0;
-        this.rate = 0;
-    }
-
-    initialize(point) {
-        super.initialize(point);
-        this.size = 5;
+    constructor() {
+        super(5);
         this.nPoints = returnRandomInt(5, 7);
         this.quanty = returnRandomInt(5, 10);
         this.space = [];
         for (let i = 0; i < this.quanty; i++) {
             this.space[i] = createVector(returnRandomInt(-180, 180), returnRandomInt(-60, 60));
         }
-        this.scale = returnRandomInt(1, 2) == 1 ? MAJOR_SCALE : MINOR_SCALE;
-        this.chord = returnScale(returnRandomInt(0, 18), this.scale[0], this.scale[1]);
-        this.noteRange = returnRange(this.pos.y);
-        this.playable = false;
     }
 
     changeSize(size) {
@@ -28,16 +17,12 @@ class star extends shape {
         }
     }
 
-    hide(sketch) {
-        this.display(sketch, false, BACKGROUND_COLOR);
-    }
-
-    display(sketch, playNote = true, param) {
-        if (param) sketch.stroke(param);
-        else sketch.stroke(SELECTED_COLOR_SWATCH[this.color]);
+    display(sketch, playNote = true, strokeColor) {
+        super.display(point, playNote, strokeColor);
+        sketch.stroke(this.currentStrokeColor);
+        sketch.fill(this.currentStrokeColor);
         sketch.strokeWeight(this.size);
         for (let i = 0; i < this.quanty; i++) {
-
             let angle = TWO_PI / this.nPoints;
             let halfAngle = angle / 2.0;
             let x = this.pos.x + this.space[i].x;
@@ -54,13 +39,13 @@ class star extends shape {
                 sketch.vertex(sx, sy);
             }
             sketch.endShape(CLOSE);
+        }
+        if (playNote && this.playable && PLAY_MUSIC) this.play(sketch);
+    }
 
-            // sketch.point(this.pos.x + this.space[i].x, this.pos.y + this.space[i].y);
-        }
-        if (playNote && this.playable && PLAY_MUSIC) {
-            console.log(this.chord[this.noteRange]);
-            playSoundFromNote(this.constructor.name, this.chord[this.noteRange]);
-        }
+    play (sketch) {
+        sketch.masterVolume(MASTER_VOLUME + (this.size * 0.01));
+        playSoundFromNote(this.constructor.name, this.chord[this.noteRange]);
     }
 
 }

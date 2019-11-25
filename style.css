@@ -1,20 +1,14 @@
-
-
 html, body {
     height: 100%;
-  }
-  
-  body {
+}
+
+body {
     margin: 0;
     display: flex;
-  
-    /* This centers our sketch horizontally. */
     justify-content: center;
-  
-    /* This centers our sketch vertically. */
     align-items: center;
     background-color: black
-  }
+}
 
 .header-buttons a {
     width: 50px;
@@ -79,7 +73,6 @@ html, body {
     filter: invert(62%) sepia(11%) saturate(695%) hue-rotate(172deg) brightness(87%) contrast(84%);
 }
 
-
 #star-button {
     background-image: url('assets/icon/star.svg');
 }
@@ -115,7 +108,6 @@ html, body {
 #butterfly-button:hover, #butterfly-button:focus {
     filter: invert(79%) sepia(11%) saturate(6214%) hue-rotate(102deg) brightness(102%) contrast(70%);
 }
-
 
 button {
     outline: none;

@@ -28,8 +28,6 @@ const ALL_INSTRUMENTS = [
     'star'
 ];
 
-const TOTAL_SOUNDS = MUSICAL_SCALE.length * ALL_INSTRUMENTS.length;
-
 const ALL_SOUNDS = Array.from(Array(ALL_INSTRUMENTS.length), () => Array(MUSICAL_SCALE.length).fill(0))
 
 const MAJOR_SCALE = [4, 3];

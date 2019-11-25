@@ -2,12 +2,7 @@ class butterfly extends shape {
 
     constructor (size) {
         super(size);
-        this.simplex = new SimplexNoise();
-        
-    }
-
-    initialize (point) {
-        super.initialize(point);
+        this.simplex = new SimplexNoise();   
         this.ts = 0.005;
         this.cs = 0.001;
         this.size = 25;
@@ -21,12 +16,7 @@ class butterfly extends shape {
 			this.verts.push(createVector(x, y));
         }
         this.quanty = 1;
-        this.space = [];
-        this.space[0] = createVector(0, 0);
-        this.scale = returnRandomInt(1, 2) == 1 ? MAJOR_SCALE : MINOR_SCALE;
-        this.chord = returnScale(returnRandomInt(0, 18), this.scale[0], this.scale[1]);
-        this.noteRange = returnRange(this.pos.y);
-        this.playable = false;
+        this.space = [createVector(0, 0)];
     }
 
     changeSize(size) {
@@ -36,17 +26,13 @@ class butterfly extends shape {
         }
     }
 
-    hide (sketch) {
-        this.display(sketch, false, BACKGROUND_COLOR);
-    }
-
-    display (sketch, playNote = true, param) {
-        let currColor = param ? color(param) : color(SELECTED_COLOR_SWATCH[this.color]);
+    display (sketch, playNote = true, strokeColor) {
+        super.display(point, playNote, strokeColor);
+        sketch.stroke(this.currentStrokeColor);
+        sketch.fill(this.currentStrokeColor);
         for (let i = 0; i < this.quanty; i++) {
             sketch.push();
-            sketch.stroke(currColor);
-            sketch.fill(currColor);
-            sketch.strokeWeight(2);
+            sketch.strokeWeight(1);
             sketch.translate(this.pos.x + this.space[i].x, this.pos.y + this.space[i].y);
             sketch.beginShape();		
             for (let r = 0; r < this.verts.length; r++){
@@ -59,11 +45,13 @@ class butterfly extends shape {
             }
             sketch.endShape(CLOSE);
             sketch.pop();
-            if (playNote && this.playable && PLAY_MUSIC) {
-                console.log(this.chord[this.noteRange]);
-                playSoundFromNote(this.constructor.name, this.chord[this.noteRange]);
-            }
         }
+        if (playNote && this.playable && PLAY_MUSIC) this.play(sketch);
+    }
+
+    play (sketch) {
+        sketch.masterVolume(MASTER_VOLUME + (this.size * 0.01));
+        playSoundFromNote(this.constructor.name, this.chord[this.noteRange]);
     }
 
 }
