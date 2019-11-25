@@ -1,10 +1,22 @@
-body {
-    padding: 0;
-    margin: 0;
-    background-color: black
-}
 
-.header-buttons .instrument a {
+
+html, body {
+    height: 100%;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+  
+    /* This centers our sketch horizontally. */
+    justify-content: center;
+  
+    /* This centers our sketch vertically. */
+    align-items: center;
+    background-color: black
+  }
+
+.header-buttons a {
     width: 50px;
     height: 50px;
     display: inline-block;
@@ -80,7 +92,6 @@ body {
     filter: invert(77%) sepia(82%) saturate(348%) hue-rotate(4deg) brightness(92%) contrast(92%);
 }
 
-
 #moon-button {
     background-image: url('assets/icon/moon.svg');
 }
@@ -93,17 +104,18 @@ body {
     filter: invert(83%) sepia(8%) saturate(4905%) hue-rotate(181deg) brightness(96%) contrast(95%);
 }
 
-#sunflower-button {
-    background-color: orange;
+.butterfly {
+    filter: invert(79%) sepia(11%) saturate(6214%) hue-rotate(102deg) brightness(102%) contrast(70%);
 }
 
-#leaf-button {
-    background-color: green;
+#butterfly-button {
+    background-image: url('assets/icon/butterfly.svg');
 }
 
-.btnsSelected {
-    box-shadow: none !important;
+#butterfly-button:hover, #butterfly-button:focus {
+    filter: invert(79%) sepia(11%) saturate(6214%) hue-rotate(102deg) brightness(102%) contrast(70%);
 }
+
 
 button {
     outline: none;

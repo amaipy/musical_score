@@ -23,8 +23,7 @@ const MUSICAL_SCALE = [
 const ALL_INSTRUMENTS = [
     'cloud',
     'flower',
-    'leaf',
-    'lines',
+    'butterfly',
     'moon',
     'star'
 ];

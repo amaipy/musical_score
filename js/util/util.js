@@ -2,6 +2,7 @@ new p5();
 
 let DEFAULT_TIMER = 50;
 const RESETED_SIZE = 20;
+let BAR_WIDTH = 180;
 const BACKGROUND_COLOR = '#000000';
 
 let PLAY_MUSIC = false;

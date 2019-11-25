@@ -52,7 +52,8 @@ class moon extends shape {
         sketch.push();
         sketch.translate(this.pos.x, this.pos.y);
         if (this.orientation == 1) sketch.rotate(HALF_PI + QUARTER_PI);
-
+        sketch.stroke(currColor);
+        sketch.strokeWeight(1);
         sketch.fill(currColor);
         sketch.beginShape();
         let deltaX = 0;
