@@ -13,7 +13,7 @@ class moon extends shape {
         super(size);
         this.nbSamples = 50;
         this.createCirclesArray();
-        this.phase = returnRandomInt(8, 15);
+        this.phase = returnRandomInt(8, 14);
         this.idVertexStart = -floor(map(this.phase, 0, 30, floor(this.nbSamples * 0.5), 0));
         this.idVertexEnd = floor(map(this.phase, 0, 30, floor(this.nbSamples * 0.5), 0));
         this.deltaIndex = this.idVertexEnd - this.idVertexStart;

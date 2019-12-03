@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="utf-8">
     <link href="style.css" rel="stylesheet">
@@ -22,6 +23,10 @@
 
 <body>
     <div class='header-buttons'>
+
+
+        
+
         <span id='flower-button' onclick='selectButton(this.id);' class='icon-instrument'></span>
         <span id='cloud-button' onclick='selectButton(this.id);' class='icon-instrument'></span>
         <span id='star-button' onclick='selectButton(this.id);' class='icon-instrument'></span>
@@ -29,16 +34,16 @@
         <span id='butterfly-button' onclick='selectButton(this.id);' class='icon-instrument'></span>
 
         <span class='icon-instrument'></span>
+
         <span id='back-button' onclick='lossSpeed();' class='icon-music music-button'></span>
         <button class="music-button" aria-live="assertive" tabindex="32" aria-label="Pause"
             onclick='changePausePlay();'>
-            <svg height="40" width="40" viewBox="0 0 1200 1200" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            <svg height="35" width="35" viewBox="0 0 1200 1200" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <defs>
                     <path id="ytp-12"
                         d="M 600,1200 C 268.65,1200 0,931.35 0,600 0,268.65 268.65,0 600,0 c 331.35,0 600,268.65 600,600 0,331.35 -268.65,600 -600,600 z M 450,300.45 450,899.55 900,600 450,300.45 z">
-                        <animate id="animation" begin="indefinite" attributeType="XML" attributeName="d"
-                            fill="freeze"
+                        <animate id="animation" begin="indefinite" attributeType="XML" attributeName="d" fill="freeze"
                             from="M 600,1200 C 268.65,1200 0,931.35 0,600 0,268.65 268.65,0 600,0 c 331.35,0 600,268.65 600,600 0,331.35 -268.65,600 -600,600 z M 450,300.45 450,899.55 900,600 450,300.45 z"
                             to="M 600,0 C 268.62914,0 0,268.62914 0,600 c 0,331.37086 268.62914,600 600,600 331.37086,0 600,-268.62914 600,-600 C 1200,268.62914 931.37086,0 600,0 z m -269.16515,289.38 181.71397,0 0,621.24 -181.71397,0 0,-621.24 z m 356.61633,0 181.71399,0 0,621.24 -181.71399,0 0,-621.24 z"
                             dur="0.1s" keySplines=".4 0 1 1" repeatCount="1"></animate>
@@ -49,6 +54,17 @@
         </button>
         <span id='foward-button' onclick='gainSpeed();' class='icon-music music-button'></span>
         <span id='loop-button' onclick='resetAllCanva();' class='icon-music music-button'></span>
+        <span id='camera-button' onclick='snapshot();' class='icon-music music-button'></span>
+
+        <span class='icon-instrument'></span>
+
+        <span id='palet-lavander' class='icon-palet' onclick='change_color(this.id);'></span>
+        <span id='palet-reddish' class='icon-palet' onclick='change_color(this.id);'></span>
+        <span id='palet-greyish' class='icon-palet' onclick='change_color(this.id);'></span>
+        <span id='palet-purple' class='icon-palet' onclick='change_color(this.id);'></span>
+        <span id='palet-colorful' class='icon-palet' onclick='change_color(this.id);'></span>
+        <span id='palet-pop' class='icon-palet' onclick='change_color(this.id);'></span>
+
     </div>
     <div id='canvas'>
     </div>

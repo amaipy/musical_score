@@ -44,7 +44,7 @@ class star extends shape {
     }
 
     play (sketch) {
-        sketch.masterVolume(MASTER_VOLUME + (this.size * 0.01));
+        sketch.masterVolume(MASTER_VOLUME + (this.quanty * 0.01)/2);
         playSoundFromNote(this.constructor.name, this.chord[this.noteRange]);
     }
 

@@ -26,15 +26,31 @@ body {
 .icon-instrument {
     display: inline-block;
     width: 60px;
+    opacity: 0.65;
     height: 60px;
     background-size: cover;
 }
 
-.icon-music {
+
+.icon-palet {
     display: inline-block;
+    width: 29px;
+    height: 29px;
+    background-size: cover;
+    opacity: 0.25;
+}
+
+
+.icon-music {
     background-size: contain;
     width: 35px;
     height: 35px;
+    padding-bottom: 2px;
+}
+
+.icon-palet:hover {
+    cursor: pointer;
+    opacity: 1;
 }
 
 #back-button {
@@ -49,15 +65,23 @@ body {
     background-image: url('assets/icon/loop.svg');
 }
 
+#camera-button {
+    background-image: url('assets/icon/camera.svg');
+}
+
+
 #flower-button {
     background-image: url('assets/icon/flower.svg');
 }
 
 .flower {
+    opacity: 1 !important;
     filter: invert(65%) sepia(48%) saturate(1028%) hue-rotate(303deg) brightness(91%) contrast(87%);
 }
 
 #flower-button:hover, #flower-button:focus {
+    cursor: pointer;
+    opacity: 1;
     filter: invert(65%) sepia(48%) saturate(1028%) hue-rotate(303deg) brightness(91%) contrast(87%);
 }
 
@@ -66,11 +90,14 @@ body {
 }
 
 .cloud {
-    filter: invert(62%) sepia(11%) saturate(695%) hue-rotate(172deg) brightness(87%) contrast(84%);
+    opacity: 1 !important;
+    filter: invert(11%) sepia(40%) saturate(5959%) hue-rotate(324deg) brightness(90%) contrast(91%);
 }
 
 #cloud-button:hover, #cloud-button:focus {
-    filter: invert(62%) sepia(11%) saturate(695%) hue-rotate(172deg) brightness(87%) contrast(84%);
+    cursor: pointer;
+    opacity: 1;
+    filter: invert(11%) sepia(40%) saturate(5959%) hue-rotate(324deg) brightness(90%) contrast(91%);
 }
 
 #star-button {
@@ -78,11 +105,14 @@ body {
 }
 
 .star {
-    filter: invert(77%) sepia(82%) saturate(348%) hue-rotate(4deg) brightness(92%) contrast(92%);
+    opacity: 1 !important;
+    filter: invert(55%) sepia(4%) saturate(3166%) hue-rotate(219deg) brightness(103%) contrast(91%);
 }
 
 #star-button:hover, #star-button:focus {
-    filter: invert(77%) sepia(82%) saturate(348%) hue-rotate(4deg) brightness(92%) contrast(92%);
+    cursor: pointer;
+    opacity: 1;
+    filter: invert(55%) sepia(4%) saturate(3166%) hue-rotate(219deg) brightness(103%) contrast(91%);
 }
 
 #moon-button {
@@ -90,14 +120,18 @@ body {
 }
 
 .moon {
+    opacity: 1 !important;
     filter: invert(83%) sepia(8%) saturate(4905%) hue-rotate(181deg) brightness(96%) contrast(95%);
 }
 
 #moon-button:hover, #moon-button:focus {
+    cursor: pointer;
+    opacity: 1;
     filter: invert(83%) sepia(8%) saturate(4905%) hue-rotate(181deg) brightness(96%) contrast(95%);
 }
 
 .butterfly {
+    opacity: 1 !important;
     filter: invert(79%) sepia(11%) saturate(6214%) hue-rotate(102deg) brightness(102%) contrast(70%);
 }
 
@@ -106,18 +140,52 @@ body {
 }
 
 #butterfly-button:hover, #butterfly-button:focus {
+    cursor: pointer;
+    opacity: 1;
     filter: invert(79%) sepia(11%) saturate(6214%) hue-rotate(102deg) brightness(102%) contrast(70%);
+}
+
+#palet-lavander {
+    background-image: url('assets/icon/lavander.svg');
+}
+
+#palet-reddish {
+    background-image: url('assets/icon/reddish.svg');
+}
+
+#palet-greyish {
+    background-image: url('assets/icon/greyish.svg');
+}
+
+#palet-purple {
+    background-image: url('assets/icon/purple.svg');
+}
+
+#palet-colorful {
+    background-image: url('assets/icon/colorful.svg');
+}
+
+#palet-pop {
+    background-image: url('assets/icon/pop.svg');
+}
+
+.focus {
+    opacity: 1;
 }
 
 button {
     outline: none;
     border: 0px solid;
+    padding: 0;
     background: transparent;
+    
 }
 
 .music-button {
     fill: #fff;
-    opacity: 0.85;
+    opacity: 0.65;
+    margin: 0 auto;
+    display: block;
 }
 
 .music-button:hover {

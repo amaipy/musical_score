@@ -1,4 +1,4 @@
-let SELECTED_COLOR_SWATCH = returnRandom(GLOBAL_SWATCHES);
+
 let SELECTED_BUTTON = '';
 let size = RESETED_SIZE;
 let CURRENT_ELEMENT = null;
@@ -27,6 +27,7 @@ const s = (sketch) => {
     sketch.setup = () => {
         sketch.createCanvas(windowWidth-BAR_WIDTH, windowHeight);
         sketch.background(BACKGROUND_COLOR);
+        change_color('palet-' + SWATCHES_NAMES[GLOBAL_SWATCHES.indexOf(SELECTED_COLOR_SWATCH)]);
     };
 
     sketch.windowResized = () => {
@@ -34,6 +35,24 @@ const s = (sketch) => {
     };
 
     sketch.draw = () => {
+
+        if (TAKE_SNAPSHOT) {
+            let return_music = false;
+            if (PLAY_MUSIC) {
+                return_music = true;
+                PLAY_MUSIC = false;
+            }
+            ELEMENTS.forEach(element => element.display(sketch));
+            sketch.saveCanvas('musical_score', 'jpg');
+            ELEMENTS.forEach(element => element.hide(sketch));
+            TAKE_SNAPSHOT = false;
+            PLAY_MUSIC = return_music;
+        }
+
+        if (CHANGE_PALET) {
+            sketch.background(BACKGROUND_COLOR); 
+            CHANGE_PALET = false
+        }
 
         if (RESET_CANVA) {
             sketch.background(BACKGROUND_COLOR);
