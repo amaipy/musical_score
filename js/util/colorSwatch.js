@@ -1,31 +1,31 @@
 const SWATCH_LAVANDER = [
-    '#E2CFEA',
+    '#EA98DF',
     '#A06CD5',
     '#6247AA',
-    '#102B3F',
-    '#062726'
+    '#1F6296',
+    '#179E99'
 ];
 
 const SWATCH_REDDISH = [
     '#A7D49B',
-    '#92AC86',
+    '#ABFF84',
     '#696047',
-    '#55251D',
+    '#DB604A',
     '#5A1807'
 ];
 
 const SWATCH_GREYISH = [
     '#848C8E',
-    '#435058',
+    '#A6C7DB',
     '#DCF763',
-    '#BFB7B6',
-    '#F1F2EE'
+    '#C8BED3',
+    '#F28A9E'
 ];
 
 const SWATCH_PURPLE = [
-    '#000505',
-    '#3B3355',
-    '#5D5D81',
+    '#00ADAD',
+    '#201054',
+    '#9B89BF',
     '#BFCDE0',
     '#FEFCCC'
 ];
@@ -39,12 +39,21 @@ const SWATCH_COLORFUL = [
 ];
 
 const SWATCH_POP = [
-    '#D8D8D8',
+    '#D89999',
     '#FFFFEA',
-    '#DA627D',
+    '#6B930D',
     '#00CECB',
     '#FFED66'
 ];
+
+const SWATCHES_NAMES = [
+    'lavander',
+    'reddish',
+    'greyish',
+    'purple',
+    'colorful',
+    'pop'
+]
 
 const GLOBAL_SWATCHES = [
     SWATCH_LAVANDER,
