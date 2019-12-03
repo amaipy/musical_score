@@ -6,3 +6,5 @@ Foward button accelerates and backwards button deccelerates play speed. The play
 The color palette can be changed by selecting one of the existents in lower buttons section.
 
 You can save a screenshot of the canvas by selecting the camera button.
+
+Developed using P5.js, HTML, ES6, CSS
