@@ -10,4 +10,4 @@ You can save a screenshot of the canvas by selecting the camera button.
 
 If you want to reset the canvas, just press the reload button above the camera button.
 
-Developed using P5.js, HTML, ES6, CSS
+Developed using P5.js, HTML, JavaScript (ES6), CSS
